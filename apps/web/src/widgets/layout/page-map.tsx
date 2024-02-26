@@ -43,15 +43,15 @@ export function PageMap({ type, frontMatter }) {
   }, []);
 
   return (
-    <aside className="sticky top-14 ml-auto hidden h-screen w-64 pb-4 pt-6 lg:block">
-      <div className="h-screen w-64 overflow-y-scroll pb-40">
+    <aside className="fixed top-0 right-0 hidden w-64 h-screen pt-6 pb-4 ml-auto lg:block">
+      <div className="w-64 h-screen pb-40 ">
         <Typography
           variant="small"
           className="font-bold capitalize text-primary"
         >
           On This Page
         </Typography>
-        <ul className="mb-8 list-none pt-2">
+        <ul className="pt-2 mb-8 list-none">
           {frontMatter.navigation &&
             frontMatter.navigation.map((el, key) => (
               <li key={key}>
@@ -71,16 +71,16 @@ export function PageMap({ type, frontMatter }) {
 
         <Typography
           variant="small"
-          className="font-bold capitalize text-primary"
+          className="block font-sans text-xs antialiased font-bold text-white capitalize"
         >
           Contribute
         </Typography>
-        <ul className="mb-8 list-none pt-2">
+        <ul className="pt-2 mb-8 list-none">
           <li>
             <a
               target="_blank"
               href="https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=material-tailwind"
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="flex justify-between gap-2 py-1 pl-4 pr-3 font-sans text-sm antialiased font-normal text-gray-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
               rel="noreferrer"
             >
               Contributor guides
@@ -90,7 +90,7 @@ export function PageMap({ type, frontMatter }) {
             <a
               target="_blank"
               href={`https://www.github.com/creativetimofficial/material-tailwind/blob/main/documentation/${type}/${frontMatter.github}.mdx?ref=material-tailwind`}
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="relative w-full py-1 text-sm text-gray-600 capitalize transition-colors list-item hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
               Edit this page
@@ -99,7 +99,7 @@ export function PageMap({ type, frontMatter }) {
           {/* <li>
             <a
               href="#"
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="relative w-full py-1 text-sm text-gray-600 capitalize transition-colors list-item hover:text-primary focus:text-primary"
             >
               Translate this page
             </a>
@@ -112,12 +112,12 @@ export function PageMap({ type, frontMatter }) {
         >
           Community
         </Typography>
-        <ul className="mb-8 list-none pt-2">
+        <ul className="pt-2 mb-8 list-none">
           <li>
             <a
               target="_blank"
               href="https://discord.com/invite/gxtg2rJa?ref=material-tailwind"
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="relative w-full py-1 text-sm text-gray-600 capitalize transition-colors list-item hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
               Join us on Discord
@@ -127,7 +127,7 @@ export function PageMap({ type, frontMatter }) {
             <a
               target="_blank"
               href="https://www.creative-tim.com/blog?ref=material-tailwind"
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="relative w-full py-1 text-sm text-gray-600 capitalize transition-colors list-item hover:text-primary focus:text-primary"
               rel="noreferrer"
             >
               Read blog posts
@@ -138,7 +138,7 @@ export function PageMap({ type, frontMatter }) {
               target="_blank"
               rel="noreferrer"
               href="https://opencollective.com/material-tailwind?ref=material-tailwind"
-              className="relative list-item w-full py-1 text-sm capitalize text-gray-600 transition-colors hover:text-primary focus:text-primary"
+              className="relative w-full py-1 text-sm text-gray-600 capitalize transition-colors list-item hover:text-primary focus:text-primary"
             >
               Open Collective
             </a>
@@ -160,7 +160,7 @@ export function PageMap({ type, frontMatter }) {
         >
           Frameworks
         </Typography>
-        <ul className="mb-8 list-none pt-2">
+        <ul className="pt-2 mb-8 list-none">
           <li className="mb-3">
             <Link
               href="/docs/react/installation"
@@ -175,7 +175,7 @@ export function PageMap({ type, frontMatter }) {
                 alt="react"
                 width={48}
                 height={48}
-                className="h-5 w-5"
+                className="w-5 h-5"
               />
               <Typography variant="small" className="font-medium text-primary">
                 React
@@ -196,7 +196,7 @@ export function PageMap({ type, frontMatter }) {
                 alt="html"
                 width={48}
                 height={48}
-                className="h-5 w-5"
+                className="w-5 h-5"
               />
               <Typography variant="small" className="font-medium text-primary">
                 HTML
@@ -213,7 +213,7 @@ export function PageMap({ type, frontMatter }) {
                 variant="outlined"
                 className="relative inline-flex items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-sm font-medium capitalize text-primary focus:ring-transparent"
               >
-                <i className="fab fa-github text-base text-primary" />
+                <i className="text-base fab fa-github text-primary" />
                 Give us Star
               </Button>
             </Link>
@@ -232,14 +232,14 @@ export function PageMap({ type, frontMatter }) {
               floated={false}
               shadow={false}
               color="transparent"
-              className="mx-4 mb-0 mt-4"
+              className="mx-4 mt-4 mb-0"
             >
               <Image
                 src="https://docs.material-tailwind.com/image/ui-ux-book.jpg"
                 alt="book"
                 width={768}
                 height={768}
-                className="h-full w-full object-cover"
+                className="object-cover w-full h-full"
               />
             </CardHeader>
             <CardBody className="p-4">
@@ -281,7 +281,7 @@ export function PageMap({ type, frontMatter }) {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="h-5 w-5"
+            className="w-5 h-5"
           >
             <path
               strokeLinecap="round"
@@ -294,7 +294,7 @@ export function PageMap({ type, frontMatter }) {
           What is on your mind?
           <Tabs value={feedbackType} className="mt-8 w-full max-w-[280px]">
             <TabsHeader
-              className="rounded-none border-b border-transparent bg-transparent p-0"
+              className="p-0 bg-transparent border-b border-transparent rounded-none"
               indicatorProps={{
                 className:
                   "bg-transparent border-b-2 border-primary shadow-none rounded-none",
@@ -315,7 +315,7 @@ export function PageMap({ type, frontMatter }) {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="mr-2 inline-block h-5 w-5"
+                  className="inline-block w-5 h-5 mr-2"
                 >
                   <path
                     strokeLinecap="round"
@@ -340,7 +340,7 @@ export function PageMap({ type, frontMatter }) {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="-mt-1 mr-2 inline-block h-5 w-5"
+                  className="inline-block w-5 h-5 mr-2 -mt-1"
                 >
                   <path
                     strokeLinecap="round"
@@ -365,7 +365,7 @@ export function PageMap({ type, frontMatter }) {
                   viewBox="0 0 24 24"
                   strokeWidth={2}
                   stroke="currentColor"
-                  className="-mt-1 mr-2 inline-block h-5 w-5"
+                  className="inline-block w-5 h-5 mr-2 -mt-1"
                 >
                   <path
                     strokeLinecap="round"
@@ -389,7 +389,7 @@ export function PageMap({ type, frontMatter }) {
             containerProps={{ className: "min-w-[100px]" }}
           />
         </DialogBody>
-        <DialogFooter className="grid grid-cols-1 items-center gap-2 pt-0 sm:grid-cols-2">
+        <DialogFooter className="grid items-center grid-cols-1 gap-2 pt-0 sm:grid-cols-2">
           <Button
             variant="outlined"
             className="relative w-full items-center gap-3 border-[1.5px] border-blue-gray-50 bg-white text-sm font-medium capitalize text-primary focus:ring-transparent"
@@ -399,9 +399,9 @@ export function PageMap({ type, frontMatter }) {
           <Button
             color="gray"
             variant="filled"
-            className="w-full bg-primary text-sm font-medium capitalize"
+            className="w-full text-sm font-medium capitalize bg-primary"
           >
-            <i className="fab fa-github mr-2 translate-y-px text-lg" /> Create
+            <i className="mr-2 text-lg translate-y-px fab fa-github" /> Create
             Github Issue
           </Button>
         </DialogFooter>

@@ -16,7 +16,13 @@ module.exports = withMT({
     "./src/public/material-tailwind-html-v2.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primaryBlack: '#0c0c0c',
+        border: '#171717',
+        secondaryBlack: '#121212',
+      },
+    },
   },
   plugins: [],
 });

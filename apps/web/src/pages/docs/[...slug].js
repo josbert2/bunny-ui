@@ -111,7 +111,7 @@ import OfferBar from "../../widgets/offer-bar";
 
 const components = {
   h1: (props) => (
-    <h1 className="mt-10 mb-4 text-4xl font-bold" {...props}></h1>
+    <h1 className="mt-10 mb-4 text-4xl font-bold text-white" {...props}></h1>
   ),
   DocsTitle,
   AlertExamples,
@@ -168,24 +168,25 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
         />
       </Head>
       <OfferBar />
-      <div className="relative w-full h-full mb-8 bg-white">
+      <div className="relative w-full h-full mb-8">
         {/*<DocsNavbar slug={slug} setMobileNav={setMobileNav} /> */}
-        <div className="px-6">
-          <div className="container flex mx-auto">
-          <Sidenav
-              routes={routes[frameworkType]}
-              type={frameworkType}
-              slug={slug[5]}
-              mobileNav={mobileNav}
-              setMobileNav={setMobileNav}
-            />
-            <div className="mt-6 w-full lg:w-[60%] lg:px-6">
-              <MDXRemote
-                {...source}
-                components={components}
-              />
-              
-            </div>
+        <Sidenav
+          routes={routes[frameworkType]}
+          type={frameworkType}
+          slug={slug[5]}
+          mobileNav={mobileNav}
+          setMobileNav={setMobileNav}
+        />
+        <div className="">
+          <div className="">
+           
+              <div className="h-full lg:ml-72 xl:ml-80">
+                <MDXRemote
+                  {...source}
+                  components={components}
+                />
+                
+              </div>
             <PageMap type={frameworkType} frontMatter={frontMatter} />
           </div>
         </div>

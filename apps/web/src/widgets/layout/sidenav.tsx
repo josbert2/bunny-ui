@@ -38,13 +38,13 @@ export function Sidenav({
 
   return (
     <aside
-      className={`fixed top-0 z-[999] h-screen w-80 overflow-y-scroll pb-4 pr-4 transition-all duration-300 lg:sticky lg:left-0 lg:top-16 lg:z-10 lg:w-56 ${
+      className={`  lg:border-r border-border top-0 z-[999] h-screen w-80  px-4 transition-all duration-300 lg:sticky lg:left-0 lg:top-16 lg:z-10 lg:w-56 ${
         mobileNav ? "left-0" : "-left-96"
       }`}
     >
       <div
         onClick={() => setMobileNav(false)}
-        className={`fixed left-0 top-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={` left-0 top-0 h-screen w-screen bg-gray-900/20 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           mobileNav
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
@@ -61,13 +61,13 @@ export function Sidenav({
           <XMarkIcon className="w-6 h-6 stroke-2" />
         </IconButton>
       )}
-      <div className="fixed top-0 z-[9999] h-screen w-80 overflow-y-scroll !bg-white pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
+      <div className="fixed top-0 z-[9999] h-screen w-80   pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
         <div className="mt-6 mb-10">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>
               <Typography
                 variant="small"
-                className="font-bold capitalize text-primary"
+                className="text-xs font-semibold text-white"
               >
                 {name}
               </Typography>
@@ -86,7 +86,7 @@ export function Sidenav({
                       <Link href={`/docs/${type}/${route}`}>
                         <Typography
                           variant="small"
-                          className={`relative list-item w-full py-1 capitalize transition-colors hover:text-primary ${
+                          className={`flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white ${
                             isActive
                               ? "font-medium text-blue-500"
                               : "font-normal text-gray-600"

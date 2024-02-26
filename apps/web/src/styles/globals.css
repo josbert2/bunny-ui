@@ -6,6 +6,11 @@
   scrollbar-color: transparent !important;
 }
 
+body{
+  --tw-bg-opacity: 1;
+  background-color: #0c0c0c;
+}
+
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 0 !important;
