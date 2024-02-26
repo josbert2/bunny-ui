@@ -249,7 +249,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
           <ol className="flex min-w-0 ml-4 text-sm leading-6 whitespace-nowrap text-blue-gray-700">
             {slug.map((el, key) => (
               <li key={key} className="flex items-center capitalize">
-                {el}
+                {el.params.slug === "react" ? "React" : el.params.slug}
                 {key === slug.length - 1 ? (
                   ""
                 ) : (

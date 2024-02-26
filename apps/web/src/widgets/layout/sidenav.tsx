@@ -38,7 +38,7 @@ export function Sidenav({
 
   return (
     <aside
-      className={`  lg:border-r border-border top-0 z-[999] h-screen w-80  px-4 transition-all duration-300 lg:sticky lg:left-0 lg:top-16 lg:z-10 lg:w-56 ${
+      className={`fixed top-0 bg-[#18181B]  lg:border-r border-border z-[999] h-screen w-80  px-4 transition-all duration-300  lg:left-0  lg:z-10 lg:w-56 ${
         mobileNav ? "left-0" : "-left-96"
       }`}
     >
@@ -61,7 +61,7 @@ export function Sidenav({
           <XMarkIcon className="w-6 h-6 stroke-2" />
         </IconButton>
       )}
-      <div className="fixed top-0 z-[9999] h-screen w-80   pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
+      <div className=" top-0 z-[9999] w-80   pb-6 pl-6 lg:relative lg:w-56 lg:bg-transparent lg:pl-0 lg:pt-0">
         <div className="mt-6 mb-10">
           {routes.map(({ name, pages }, key): any => (
             <div key={key}>

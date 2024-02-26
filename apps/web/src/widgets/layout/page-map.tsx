@@ -43,7 +43,7 @@ export function PageMap({ type, frontMatter }) {
   }, []);
 
   return (
-    <aside className="fixed top-0 right-0 hidden w-64 h-screen pt-6 pb-4 ml-auto lg:block">
+    <aside className="right-0 hidden w-64 h-screen pt-6 pb-4 ml-auto lg:block">
       <div className="w-64 h-screen pb-40 ">
         <Typography
           variant="small"

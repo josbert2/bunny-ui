@@ -8,7 +8,7 @@ import copyToClipboard from "../utils/copy-to-clipboard";
 
 export function CodePreview({ id, component, link, children, className }) {
   const codeRef = React.useRef(null);
-  const [mode, setMode] = React.useState("preview");
+  const [mode, setMode] = React.useState("code"); // code | preview
   const [copied, setCopied] = React.useState(false);
 
   const handleCopy = () => {
@@ -19,8 +19,8 @@ export function CodePreview({ id, component, link, children, className }) {
   return (
     <div
       id={id}
-      className={`scroll-mt-64 overflow-hidden rounded-xl border border-blue-gray-50 ${
-        mode === "code" ? "bg-[#1e293b]" : "bg-[#f8fafc]"
+      className={`scroll-mt-64 overflow-hidden rounded-xl border border-[#171717] ${
+        mode === "code" ? "bg-[#121212]" : "bg-[#f8fafc]"
       } ${className || ""}`}
     >
       <div
