@@ -197,12 +197,14 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
         setMobileNav={setMobileNav}
       />
       <div className="relative flex w-full h-full mb-8 ">
-        <div className="h-full lg:ml-72 xl:ml-[14rem]">
+        <div className="h-full lg:ml-72 xl:ml-[14rem] ">
           <DocsNavbar slug={slug} setMobileNav={setMobileNav} />
-          <MDXRemote
-            {...source}
-            components={components}
-          />
+          <div class="px-10">
+            <MDXRemote
+              {...source}
+              components={components}
+            />
+          </div>
         </div>
         <PageMap type={frameworkType} frontMatter={frontMatter} />
       </div>
@@ -225,8 +227,9 @@ export async function getStaticProps({ params }) {
   const mdxSource = await serialize(markdownWithMeta, {
     parseFrontmatter: true,
     mdxOptions: {
+      rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypePrettyCode(rehypePrettyCodeConfig)],
+
     },
   })
 

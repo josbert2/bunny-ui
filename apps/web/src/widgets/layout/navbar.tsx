@@ -173,7 +173,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
   return (
     <div className="sticky top-0 z-[999] flex w-full items-center">
       <Navbar
-        className="w-full max-w-full rounded-none border-b-[1.5px] !border-blue-gray-50 bg-white py-1.5 !pl-2 !pr-3 lg:!px-4 lg:!py-0.5"
+        className="w-full max-w-full rounded-none   py-1.5 !pl-2 !pr-3 lg:!px-4 lg:!py-0.5 bg-transparent border-transparent border-b-border"
         shadow={false}
       >
         <div className="container mx-auto">
@@ -187,7 +187,7 @@ export function DocsNavbar({ slug, setMobileNav }: DocsNavbar) {
                 variant="small"
                 className="font-bold leading-tight text-primary"
               >
-                Material <br /> Tailwind
+                Material <br /> Tailwind asd
               </Typography>
               <Chip
                 value={`v${

@@ -2,7 +2,7 @@ import { readdirSync } from "fs";
 import path from "path";
 
 export default function getDirectoriesAndFile(dir: string) {
-  console.log(dir);
+
   return dir === "src/documentation/.DS_Store"
     ? null
     : readdirSync('src/' + dir)

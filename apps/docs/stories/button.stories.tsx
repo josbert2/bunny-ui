@@ -29,7 +29,7 @@ export const Primary: Story = {
         alert("Hello from Turborepo!");
       }}
     >
-      Hello
+      Hello enviar
     </Button>
   ),
   name: "Button",
@@ -38,9 +38,10 @@ export const Primary: Story = {
     type: "button",
     style: {
       color: "blue",
-      border: "1px solid gray",
+      border: "1px solid red",
       padding: 10,
       borderRadius: 10,
+      background: "red"
     },
   },
 };
