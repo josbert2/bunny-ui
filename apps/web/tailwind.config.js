@@ -14,7 +14,7 @@ module.exports = withMT({
     "./src/docs-content/**/*.{js,ts,jsx,tsx}",
     "./src/documentation/**/*.mdx",
     "./src/public/material-tailwind-html-v2.js",
-    "../packages/ui/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/ui/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

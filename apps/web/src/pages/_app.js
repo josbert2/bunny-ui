@@ -27,11 +27,11 @@ import BgGradient from "../widgets/BgGradient";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
-    <Fragment>
-      <ThemeProvider>
+    <Fragment >
+      <ThemeProvider >
         <BgGradient />
-      
-        <Component {...pageProps} />
+       
+        <Component  {...pageProps} />
         <div className="fixed hidden right-4 top-2/4 -translate-y-2/4 lg:block">
           <Menu placement="left" allowHover>
             <MenuHandler>

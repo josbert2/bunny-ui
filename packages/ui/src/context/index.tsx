@@ -1,15 +1,20 @@
 import React, { createContext, useContext } from "react";
-
 import merge from "deepmerge";
 import theme from "../theme/index";
 import combineMerge from "../utils/combineMerge";
 
-const LexUI = createContext(theme);
+// Esta es tu configuración de tema extendida que incluye la fuente local y otros estilos
+const customTheme = {
+  ...theme,
+  // Puedes agregar más personalizaciones de Tailwind aquí
+};
+
+const LexUI = createContext(customTheme);
 
 LexUI.displayName = "LexUIThemeProvider";
 
-function ThemeProvider({ value = theme, children }) {
-  const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
+function ThemeProvider({ value = customTheme, children }) {
+  const mergedValue = merge(customTheme, value, { arrayMerge: combineMerge });
 
   return (
     <LexUI.Provider value={mergedValue}>{children}</LexUI.Provider>
@@ -17,7 +22,5 @@ function ThemeProvider({ value = theme, children }) {
 }
 
 const useTheme = () => useContext(LexUI);
-
-
 
 export { LexUI, ThemeProvider, useTheme };

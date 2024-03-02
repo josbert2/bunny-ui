@@ -1,6 +1,10 @@
-import merge from "deepmerge";
+import merge, { Options } from 'deepmerge';
 
-export default function combineMerge(target, source, options) {
+export default function combineMerge(
+  target: any[], 
+  source: any[], 
+  options: Options
+): any[] {
   const destination = target.slice();
 
   source.forEach((item, index) => {
