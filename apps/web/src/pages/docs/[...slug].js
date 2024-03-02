@@ -12,7 +12,7 @@ import { MDXRemote } from "next-mdx-remote";
 import rehypePrettyCode from "rehype-pretty-code";
 import { serialize } from "next-mdx-remote/serialize";
 
-import { bgGradientSmooth } from "../../widgets/bgGradientSmooth";
+
 
 // @widgets
 import {
@@ -110,16 +110,98 @@ import getDirectoriesAndFile from "../../utils/get-directories-and-files";
 import initHtmlScripts from "../../../public/material-tailwind-html-v2";
 import OfferBar from "../../widgets/offer-bar";
 
-
 const components = {
   h1: (props) => (
     <h1 className="mt-10 mb-4 text-4xl font-bold text-white" {...props}></h1>
   ),
-  DocsTitle,
+  h2: (props) => (
+    <h2 className="mt-10 mb-4 text-3xl font-bold text-white" {...props}></h2>
+  ),
+  h3: (props) => (
+    <h3 className="mt-10 mb-4 text-2xl font-bold text-white" {...props}></h3>
+  ),
+  h4: (props) => (
+    <h4 className="mt-10 mb-4 text-xl font-bold text-white" {...props}></h4>
+  ),
+  h5: (props) => (
+    <h5 className="mt-10 mb-4 text-lg font-bold text-white" {...props}></h5>
+  ),
+  h6: (props) => (
+    <h6 className="mt-10 mb-4 text-base font-bold text-white" {...props}></h6>
+  ),
+  p: (props) => (
+    <Typography className="!mb-4 !font-normal !text-gray-600" {...props} />
+  ),
+  hr: () => <hr className="!mb-12 !mt-16 border-transparent" />,
+  a: (props) => (
+    <a
+      className="!font-medium !text-primary !transition-colors hover:!text-blue-500"
+      {...props}
+    />
+  ),
+  
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+  Alert,
   AlertExamples,
+  Avatar,
+  Breadcrumbs,
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Checkbox,
+  Chip,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+  IconButton,
+  Input,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  MobileNav,
+  Navbar,
+  Option,
+  Popover,
+  PopoverHandler,
+  PopoverContent,
+  Progress,
+  Radio,
+  Select,
+  Switch,
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+  Textarea,
+  Tooltip,
+  Typography,
+  ButtonGroup,
+  Carousel,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Collapse,
+  Slider,
+  Image,
   Code,
-  CodePreview
- 
+  FrameworkCard,
+  CraLogo,
+  NextLogo,
+  RemixLogo,
+  ViteLogo,
+  AstroLogo,
+  GatsbyLogo,
+  CodePreview,
+  DocsTitle,
+  Link
 };
 
 
@@ -161,6 +243,7 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
   
   return (
     <>
+    
        <Head>
         <title>x</title>
         <meta name="description" content="x" />
@@ -169,7 +252,7 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
           href={`https://www.material-tailwind.com/docs/${canonical}`}
         />
       </Head>
-      {/* <OfferBar /> */}
+      {/*<OfferBar /> */}
       
      <Sidenav
         routes={routes[frameworkType]}
@@ -178,13 +261,13 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
         mobileNav={mobileNav}
         setMobileNav={setMobileNav}
       />
-     
-      <div className="relative flex w-full h-full mb-8 ">
+      
+      <div className="relative flex w-full h-full mb-8  z-[60]">
         <div className="h-full lg:ml-72 xl:ml-[18rem] pt-10  ">
   
             {/*<DocsNavbar slug={slug} setMobileNav={setMobileNav} /> */}
             <div class="px-[8rem]">
-            <bgGradientSmooth />
+          
               <MDXRemote
                 {...source}
                 components={components}
@@ -209,13 +292,16 @@ export async function getStaticProps({ params }) {
   const doc = {}
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
-
+  const options = {
+    theme: "one-dark-pro"
+  }
   const mdxSource = await serialize(markdownWithMeta, {
     parseFrontmatter: true,
     mdxOptions: {
       rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeConfig]],
       remarkPlugins: [remarkGfm],
 
+      
     },
   })
 

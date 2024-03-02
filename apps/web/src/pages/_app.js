@@ -15,18 +15,22 @@ import {
   ThemeProvider,
 } from "@material-tailwind/react";
 
+
+
 // styles
 import "../styles/globals.css";
 //import "@docsearch/css";
 
 //import * as fbq from "../utils/fpixel";
 import { useRouter } from "next/router";
-
+import BgGradient from "../widgets/BgGradient";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <Fragment>
       <ThemeProvider>
+        <BgGradient />
+      
         <Component {...pageProps} />
         <div className="fixed hidden right-4 top-2/4 -translate-y-2/4 lg:block">
           <Menu placement="left" allowHover>
