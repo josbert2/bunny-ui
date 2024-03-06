@@ -277,3 +277,19 @@ table tbody tr td code {
 .tiptap p.is-editor-empty:first-child::before {
   @apply float-left h-0 text-sm pointer-events-none;
 }
+
+
+.dark .prose p{
+  color: #d6deeb85;
+}
+
+.dark .prose a {
+  color: #58a6ff;
+}
+.prose a {
+  color: #0d6efd;
+}
+
+.prose p {
+  color: #212529;
+}

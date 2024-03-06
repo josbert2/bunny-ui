@@ -110,7 +110,6 @@ import getDirectoriesAndFile from "../../utils/get-directories-and-files";
 import initHtmlScripts from "../../../public/material-tailwind-html-v2";
 import OfferBar from "../../widgets/offer-bar";
 
-
 const components = {
   h1: (props) => (
     <h1 className="mt-10 mb-4 text-4xl font-bold text-white" {...props}></h1>
@@ -183,7 +182,8 @@ export default function Page({ frontMatter, mdxSource, slug, source }) {
         <div className="h-full lg:ml-72 xl:ml-[18rem] pt-10  ">
   
             {/*<DocsNavbar slug={slug} setMobileNav={setMobileNav} /> */}
-            <div class="px-[8rem]">
+            <div class="px-[8rem] prose">
+              
             <bgGradientSmooth />
               <MDXRemote
                 {...source}
