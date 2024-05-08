@@ -8,7 +8,7 @@ import copyToClipboard from "../utils/copy-to-clipboard";
 
 export function CodePreview({ id, component, link, children, className }) {
   const codeRef = React.useRef(null);
-  const [mode, setMode] = React.useState("code"); // code | preview
+  const [mode, setMode] = React.useState("previw"); // code | preview
   const [copied, setCopied] = React.useState(false);
 
   const handleCopy = () => {
@@ -19,16 +19,19 @@ export function CodePreview({ id, component, link, children, className }) {
   return (
     <div
       id={id}
-      className={`scroll-mt-64 overflow-hidden rounded-xl border border-[#171717] ${
+      className={`scroll-mt-64 overflow-hidden rounded-xl border border-blue-gray-100/60 ${
         mode === "code" ? "bg-[#121212]" : "bg-[#f8fafc]"
       } ${className || ""}`}
     >
       <div
-        className={`flex items-center justify-between border-b border-blue-gray-50 p-1 ${
+        className={`flex items-center justify-between border-b border-blue-gray-100/60 p-1 ${
           mode === "code" ? "border-opacity-10" : ""
         }`}
       >
-        <div className="flex items-center justify-end w-full gap-2">
+        <div className="flex items-center justify-end w-full gap-2 px-3 py-3">
+          <div className="mr-auto font-regular">
+            Preview <span className="text-base text-blue-gray-500">/</span> Code
+          </div>
           {/* {link && (
             <Menu open={isMenuOpen} handler={setIsMenuOpen}>
               <MenuHandler>
@@ -96,7 +99,7 @@ export function CodePreview({ id, component, link, children, className }) {
               type="button"
               variant="text"
               size="sm"
-              color={mode === "code" ? "white" : "blue-gray"}
+              color={mode === "code" ? "white" : "black"}
               className={
                 mode === "code"
                   ? "text-white/80 hover:text-white"
@@ -120,10 +123,10 @@ export function CodePreview({ id, component, link, children, className }) {
           </Tooltip>
         </div>
       </div>
-      <div className="grid min-h-[140px] w-full place-items-center overflow-x-scroll rounded-lg p-6 lg:overflow-visible">
+      <div className="grid min-h-[240px] w-full place-items-center overflow-x-scroll rounded-lg p-6 py-8 lg:overflow-visible">
         {component}
       </div>
-      <div className="code-preview block max-h-[40rem] overflow-scroll rounded-b-xl">
+      <div className="code-preview  bg-[#2c2d2d] px-6 py-16  block max-h-[40rem]  rounded-b-xl">
         {React.cloneElement(children, { ref: codeRef })}
       </div>
     </div>

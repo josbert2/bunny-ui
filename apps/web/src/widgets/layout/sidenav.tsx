@@ -63,7 +63,7 @@ export function Sidenav({
       )}
       <div className=" top-0 z-[9999] w-80   pb-6 pl-6 lg:relative w-full lg:bg-transparent lg:pl-0 lg:pt-0">
     
-        <div className="relative flex pt-5 ">
+        <div className="relative flex pt-5">
           <h4 className="text-[#ededed] flex mb-0 pb-0 text-[2rem] font-bold italic relative">
             BUNNY 
             <span className="absolute top-0 p-1 py-0 text-base not-italic normal-case border rounded-lg -right-9" >UI</span>
@@ -75,7 +75,7 @@ export function Sidenav({
             <div key={key}>
               <Typography
                 variant="small"
-                className="text-xs font-semibold text-white"
+                className="text-xs font-semibold text-white "
               >
                 {name}
               </Typography>
@@ -94,7 +94,7 @@ export function Sidenav({
                       <Link href={`/docs/${type}/${route}`}>
                         <Typography
                           variant="small"
-                          className={`flex justify-between gap-2 py-1 pr-3 text-sm transition pl-4 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white ${
+                          className={`flex transition-all hover:font-white justify-between gap-2 py-1 pr-3 text-sm  pl-4 text-zinc-600 hover:text-zinc-900 text-zinc-400 hover:text-white ${
                             isActive
                               ? "font-medium text-blue-500"
                               : "font-normal text-gray-600"
